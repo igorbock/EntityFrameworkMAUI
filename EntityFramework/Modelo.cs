@@ -4,6 +4,8 @@ public class Modelo : DbContext
 {
     private string _connection_string { get; set; }
 
+    public Modelo() { }
+
     public Modelo(DbContextOptions<Modelo> p_options)
     {
         try
@@ -25,8 +27,8 @@ public class Modelo : DbContext
         base.OnConfiguring(optionsBuilder);
     }
 
-    public DbSet<Produto> Produtos { get; set; }
-    public DbSet<Setor> Setores { get; set; }
-    public DbSet<Etiqueta> Etiquetas { get; set; }
-    public DbSet<Solicitacao> Solicitacoes { get; set; }
+    public virtual DbSet<Produto> Produtos { get; set; }
+    public virtual DbSet<Setor> Setores { get; set; }
+    public virtual DbSet<Etiqueta> Etiquetas { get; set; }
+    public virtual DbSet<Solicitacao> Solicitacoes { get; set; }
 }
